@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/css/main.7acaea2f.css",
+    "main.js": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/js/main.07d3183d.js",
+    "index.html": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/index.html",
+    "main.7acaea2f.css.map": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
