@@ -1,13 +1,19 @@
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(options);
   return (
     <div>
-      <h2>Please leave feedback</h2>
-      {/* <button onClick={}>Good</button>
-      <button onClick={}>Neutral</button>
-      <button onClick={}>Bad</button> */}
+      {options.map(option => (
+        <button
+          key={option}
+          style={{ textTransform: 'capitalize' }}
+          onClick={() => onLeaveFeedback(option)}
+        >
+          {option}
+        </button>
+      ))}
     </div>
   );
 };
 
 export default FeedbackOptions;
+
+// (option ="total" && option = "positiveFeedback" } ? { underfined } :

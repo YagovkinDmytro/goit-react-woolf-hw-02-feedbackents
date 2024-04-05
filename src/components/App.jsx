@@ -7,15 +7,13 @@ export class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
-    positiveFeedback: 0,
   };
 
-  hendlerclickStatistic = () => {
+  hendlerclickStatistic = option => {
     this.setState(prevState => {
-      // return {
-      //   [option]: prevState[option] + 1,
-      // };
+      return {
+        [option]: prevState[option] + 1,
+      };
     });
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
@@ -23,15 +21,13 @@ export class App extends Component {
 
   countTotalFeedback = () => {
     this.setState(prevState => ({
-      total: prevState.countGood + prevState.countNeutral + prevState.countBad,
+      total: prevState.good + prevState.neutral + prevState.bad,
     }));
   };
 
   countPositiveFeedbackPercentage = () => {
     this.setState(prevState => ({
-      positiveFeedback: Math.floor(
-        (prevState.countGood * 100) / prevState.total
-      ),
+      positiveFeedback: Math.floor((prevState.good * 100) / prevState.total),
     }));
   };
 
@@ -43,11 +39,11 @@ export class App extends Component {
           onLeaveFeedback={this.hendlerclickStatistic}
         />
         <Statistics
-          good={this.state.countGood}
-          neutral={this.state.countNeutral}
-          bad={this.state.countBad}
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
           total={this.state.total}
-          positivePercentage={this.state.positiveFeedback}
+          positiveFeedback={this.state.positiveFeedback}
         />
       </div>
     );
