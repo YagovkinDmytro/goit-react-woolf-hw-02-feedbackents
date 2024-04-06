@@ -1,10 +1,12 @@
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <div className="block-feedback">
       {options.map(option => {
         if (option !== 'total' && option !== 'positiveFeedback') {
           return (
             <button
+              className="button-feedback"
+              type="button"
               key={option}
               style={{ textTransform: 'capitalize' }}
               onClick={() => onLeaveFeedback(option)}

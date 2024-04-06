@@ -1,13 +1,18 @@
 import { Component } from 'react';
 import Statistics from './Statistics/Statistics';
-import FeedbackOptions from './Statistics/FeedbackOptions';
-
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import Section from './Section/Section';
+import Notification from './Notification/Notification';
+import './FeedbackOptions/feedbackOptions.css';
+import './Section/section.css';
+import './Statistics/statistics.css';
 export class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
+  isOpen = false;
 
   hendlerclickStatistic = option => {
     this.setState(prevState => {
@@ -17,6 +22,7 @@ export class App extends Component {
     });
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
+    this.isOpen = true;
   };
 
   countTotalFeedback = () => {
@@ -31,20 +37,31 @@ export class App extends Component {
     }));
   };
 
+  openStatistic(isOpen) {
+    return isOpen;
+  }
+
   render() {
     return (
-      <div>
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onLeaveFeedback={this.hendlerclickStatistic}
-        />
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.state.total}
-          positiveFeedback={this.state.positiveFeedback}
-        />
+      <div className="container">
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.hendlerclickStatistic}
+          />
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.state.total}
+            positiveFeedback={this.state.positiveFeedback}
+            isOpen={this.isOpen}
+          >
+            <Notification message="There is no feedback" />
+          </Statistics>
+        </Section>
       </div>
     );
   }
