@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/css/main.a3131af2.css",
-    "main.js": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/js/main.45323c7d.js",
-    "index.html": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/index.html",
-    "main.a3131af2.css.map": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/css/main.a3131af2.css.map",
-    "main.45323c7d.js.map": "/YagovkinDmytro/goit-react-woolf-hw-02-feedbackents/static/js/main.45323c7d.js.map"
+    "main.css": "/goit-react-woolf-hw-02-feedbackents/static/css/main.a3131af2.css",
+    "main.js": "/goit-react-woolf-hw-02-feedbackents/static/js/main.45323c7d.js",
+    "index.html": "/goit-react-woolf-hw-02-feedbackents/index.html",
+    "main.a3131af2.css.map": "/goit-react-woolf-hw-02-feedbackents/static/css/main.a3131af2.css.map",
+    "main.45323c7d.js.map": "/goit-react-woolf-hw-02-feedbackents/static/js/main.45323c7d.js.map"
   },
   "entrypoints": [
     "static/css/main.a3131af2.css",
