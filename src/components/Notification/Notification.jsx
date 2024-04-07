@@ -1,5 +1,5 @@
 const Notification = ({ message }) => {
-  return <div>{message}</div>;
+  return <div className="block-info">{message}</div>;
 };
 
 export default Notification;
