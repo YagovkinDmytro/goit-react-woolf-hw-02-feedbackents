@@ -12,7 +12,6 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  isOpen = false;
 
   hendlerclickStatistic = option => {
     this.setState(prevState => {
@@ -20,9 +19,6 @@ export class App extends Component {
         [option]: prevState[option] + 1,
       };
     });
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
-    this.isOpen = true;
   };
 
   countTotalFeedback = () => {
@@ -37,11 +33,9 @@ export class App extends Component {
     }));
   };
 
-  openStatistic(isOpen) {
-    return isOpen;
-  }
-
   render() {
+    const total = this.countTotalFeedback();
+    const positiveFeedback = this.countPositiveFeedbackPercentage();
     return (
       <div className="container">
         <Section title="Please leave feedback">
@@ -51,16 +45,18 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.state.total}
-            positiveFeedback={this.state.positiveFeedback}
-            isOpen={this.isOpen}
-          >
+          {total > 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.state.total}
+              positiveFeedback={positiveFeedback}
+              isOpen={this.isOpen}
+            ></Statistics>
+          ) : (
             <Notification message="There is no feedback" />
-          </Statistics>
+          )}
         </Section>
       </div>
     );
